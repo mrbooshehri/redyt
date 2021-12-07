@@ -69,7 +69,7 @@ wget -P "$cachedir" $imgs
 $notifier  "Redyt" "👍 Download Finished, Enjoy! 😊"
 
 # Display the images
-show_results=$(echo -e "Yes\nNo" | dmenu -p "Do you want to veiw the downloaded images in image viewer? ")
+show_results=$(echo -e "No\nYes" | dmenu -p "Do you want to veiw the downloaded images in image viewer? ")
 [ "$show_results" == "Yes" ] && sxiv -a "$cachedir"/*.png "$cachedir"/*.jpg || exit 0
 
 # Once finished, remove all of the cached images
